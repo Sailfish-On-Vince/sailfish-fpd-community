@@ -15,7 +15,7 @@
  *
  * Authored by: Erfan Abdi <erfangplus@gmail.com>
  */
-#include <biometry/hardware/biometry.h>
+#include <biometry.h>
 
 #include <pthread.h>
 #include <string>
@@ -49,8 +49,8 @@ struct UHardwareBiometry_
     UHardwareBiometryRequestStatus setActiveGroup(uint32_t gid, char *storePath);
     UHardwareBiometryRequestStatus authenticate(uint64_t operationId, uint32_t gid);
 
-    UHardwareBiometryCallback getCbInstance();
-    void notify(const fingerprint_msg_t *msg);
+    static UHardwareBiometryCallback getCbInstance();
+    static void notify(const fingerprint_msg_t *msg);
 };
 
 struct UHardwareBiometryCallback_
