@@ -62,9 +62,6 @@ QString AndroidFP::getDefaultGroupPath(uint32_t uid)
     if (api_level.empty()) {
       api_level = store.get("ro.build.version.sdk");
     }
-    if (atoi(api_level.c_str()) <= 27) {
-      return QStringLiteral("/data/system/users/%1/fpdata").arg(uid);
-    }
     return QStringLiteral("/data/vendor_de/%1/fpdata").arg(uid);
 }
 
